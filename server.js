@@ -23,5 +23,5 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 // start server on the specified port and binding host
 app.listen(server_port, server_ip_address, function() {
  console.log( "Listening on " + server_ip_address + ", port " + server_port )
-  log.info(path.basename(module.filename), "Application started @" + appEnv.url);
+  log.info(path.basename(module.filename), "Application Listening @" +  server_ip_address + ", port " + server_port);
 });
