@@ -1,5 +1,5 @@
 {
-  "name": "REST API",
+  "name": "myrestapi",
   "version": "1.0.0",
   "description": "These API(s) will be exposed for external integration",
   "main": "server.js",
