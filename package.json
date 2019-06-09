@@ -4,8 +4,6 @@
   "description": "These API(s) will be exposed for external integration",
   "main": "server.js",
   "scripts": {
-    "build": "webpack",
-    "postinstall": "npm run build",
     "start": "node server.js"
   },
   "keywords": [
