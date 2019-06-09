@@ -5,8 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 //const auth = require("./auth.js")();
 const config = require("./config.js");
-
-var cfenv = require("cfenv");
+//var cfenv = require("cfenv");
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,14 +14,14 @@ app.use(bodyParser.json());
 const routes = require('./api/routes/route.js');
 routes(app);
 log.level = config.logLevel;
-
 // get the app environment from Cloud Foundry
 
-var appEnv = cfenv.getAppEnv();
-
+//var appEnv = cfenv.getAppEnv();
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+ 
 // start server on the specified port and binding host
-app.listen(appEnv.port, "0.0.0.0", function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
+app.listen(server_port, server_ip_address, function() {
+ console.log( "Listening on " + server_ip_address + ", port " + server_port )
   log.info(path.basename(module.filename), "Application started @" + appEnv.url);
 });
