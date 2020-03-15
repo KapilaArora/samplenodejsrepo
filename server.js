@@ -18,7 +18,7 @@ log.level = config.logLevel;
 
 //var appEnv = cfenv.getAppEnv();
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
+var server_ip_address = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
  
 // start server on the specified port and binding host
 app.listen(server_port, server_ip_address, function() {
