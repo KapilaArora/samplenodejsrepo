@@ -4,7 +4,6 @@ const log = require("npmlog");
 const multer = require("multer");
 const helmet = require("helmet");
 const mkdirp = require("mkdirp");
-const dateFormat = require("date-and-time");
 
 
 module.exports = (app,auth) => {
